@@ -459,7 +459,7 @@ class Value(object):
 
             except Exception as e:
                 global _WARN
-                if is_setting_initializing and isinstance(e, DatabaseError) and str(e).find(
+                if isinstance(e, DatabaseError) and str(e).find(
                         "livesettings_setting") > -1:
                     if 'livesettings_setting' not in _WARN:
                         log.warning(str(e).strip())
